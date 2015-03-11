@@ -8,31 +8,6 @@
 
 int main(void){
 
-	
-	
-	/*std::unordered_map<std::string, int> a;
-	std::unordered_map<std::string, int> b;
-
-	std::pair< std::string, int> a1("wo", 1);
-	std::pair< std::string, int> a2("or", 2);
-	std::pair< std::string, int> a3("rl", 3);
-	std::pair< std::string, int> a4("ld", 4);
-
-	a.insert(a1);
-	a.insert(a2);
-	a.insert(a3);
-	a.insert(a4);
-
-	std::pair< std::string, int> b1("ld", 1);
-	std::pair< std::string, int> b2("co", 2);
-	std::pair< std::string, int> b3("ou", 3);
-	std::pair< std::string, int> b4("ul", 4);
-
-	b.insert(b1);
-	b.insert(b2);
-	b.insert(b3);
-	b.insert(b4);
-	*/
 	int k = 3;
 
 	Hui::KGrams document_1(k, false, true, "Data/doc1.txt");
@@ -55,19 +30,27 @@ int main(void){
 	document_4.processDocumentToSet();
 	//document_4.showDocumentSet();
 
-	Hui::MinHash minhash(50);
-	minhash.getRepresentColDocument(document_1.getDocumentSet(), document_2.getDocumentSet(), 
-									Hui::SetUnion(document_1.getDocumentSet(), document_2.getDocumentSet()));
-	minhash.getMinHashRepresentColDocument();
-	float similarity = minhash.getSimilarity();
-	
+	//Hui::MinHash minhash(50);
+	//minhash.getRepresentColDocument(document_1.getDocumentSet(), document_2.getDocumentSet(), 
+	//								Hui::SetUnion(document_1.getDocumentSet(), document_2.getDocumentSet()));
+	//minhash.getMinHashRepresentColDocument();
+	//float similarity = minhash.getSimilarity();
+
 	float similarity_12 = Hui::SetJaccard(document_1.getDocumentSet(), document_2.getDocumentSet());
 	float similarity_13 = Hui::SetJaccard(document_1.getDocumentSet(), document_3.getDocumentSet());
 	float similarity_14 = Hui::SetJaccard(document_1.getDocumentSet(), document_4.getDocumentSet());
 	float similarity_23 = Hui::SetJaccard(document_2.getDocumentSet(), document_3.getDocumentSet());
 	float similarity_24 = Hui::SetJaccard(document_2.getDocumentSet(), document_4.getDocumentSet());
 	float similarity_34 = Hui::SetJaccard(document_3.getDocumentSet(), document_4.getDocumentSet());
-	
+
+	std::cout << "The Jaccard Similarity of document 1 and document 2 is " << similarity_12 << std::endl;
+	std::cout << "The Jaccard Similarity of document 1 and document 3 is " << similarity_13 << std::endl;
+	std::cout << "The Jaccard Similarity of document 1 and document 4 is " << similarity_14 << std::endl;
+	std::cout << "The Jaccard Similarity of document 2 and document 3 is " << similarity_23 << std::endl;
+	std::cout << "The Jaccard Similarity of document 2 and document 4 is " << similarity_24 << std::endl;
+	std::cout << "The Jaccard Similarity of document 3 and document 4 is " << similarity_34 << std::endl;
+
+
 	int hehe;
 	std::cin >> hehe;
 
