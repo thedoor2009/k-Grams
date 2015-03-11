@@ -16,6 +16,9 @@
     <Filter Include="SetHelper">
       <UniqueIdentifier>{58347278-b89f-40cf-bf8f-eeb92a3a0e4d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MinHash">
+      <UniqueIdentifier>{99ab4151-6329-48c5-a3f3-f705c0b858ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\KGrams.h">
@@ -24,6 +27,12 @@
     <ClInclude Include="Code\SetHelper.h">
       <Filter>SetHelper</Filter>
     </ClInclude>
+    <ClInclude Include="Code\MinHash.h">
+      <Filter>MinHash</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\MinHashFunction.h">
+      <Filter>MinHash</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\KGrams.cpp">
@@ -31,6 +40,9 @@
     </ClCompile>
     <ClCompile Include="Code\main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\MinHash.cpp">
+      <Filter>MinHash</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

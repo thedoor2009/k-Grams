@@ -12,11 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\KGrams.h" />
+    <ClInclude Include="Code\MinHash.h" />
+    <ClInclude Include="Code\MinHashFunction.h" />
     <ClInclude Include="Code\SetHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\KGrams.cpp" />
     <ClCompile Include="Code\main.cpp" />
+    <ClCompile Include="Code\MinHash.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{025276E4-BA3E-406F-994B-674EFE2E12BC}</ProjectGuid>

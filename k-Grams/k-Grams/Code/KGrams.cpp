@@ -3,6 +3,8 @@
 #include<string>
 #include<iostream>
 #include<fstream>
+#include <algorithm> 
+#include <vector> 
 #include <unordered_map>
 
 namespace Hui{
@@ -37,35 +39,26 @@ namespace Hui{
 			}
 			else{
 				for (unsigned int i = 0; i < document_size - m_k + 1; i++){
-					if (m_doc_data.at(i) == ' '){
-						continue;
+					char *newSeq = new char[10];
+					char character;
+					int count = 0;
+					int index = 0;
+
+					while (count < m_k && i + index < document_size){
+						character = m_doc_data.at(i + index);
+
+						newSeq[count] = character;
+						count++;
+						index++;
 					}
-					else{
-						char *newSeq = new char[10];
-						char character;
-						int count = 0;
-						int index = 0;
+					newSeq[count] = '\0';
 
-						while (count < m_k && i + index < document_size){
-							character = m_doc_data.at(i + index);
-							if (character == ' '){
-								index++;
-							}
-							else{
-								newSeq[count] = character;
-								count++;
-								index++;
-							}
-						}
-						newSeq[count] = '\0';
+					std::string str(newSeq);
+					int n = m_doc_set.size();
+					std::pair< std::string, int> set(str, n);
 
-						std::string str(newSeq);
-						int n = m_doc_set.size();
-						std::pair< std::string, int> set(str, n);
-						
-						if (m_doc_set.find(str) == m_doc_set.end() && str.size() == m_k){
-							m_doc_set.insert(set);
-						}
+					if (m_doc_set.count(str) == 0 && str.size() == m_k){
+						m_doc_set.insert(set);
 					}
 				}
 			}
